@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 export default function Header() {
         return (
-                <Navbar expand="lg" variant="green" style={{ color: "white" }}>
+                <Navbar expand="xxl" bg="primary">
                         <Container>
                                 <Navbar.Brand href="#home">Eugene Garden & Harvest Center</Navbar.Brand>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

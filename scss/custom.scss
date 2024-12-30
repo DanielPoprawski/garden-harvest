@@ -1,3 +1,14 @@
+
+$primary: green;
+$bg: #efefef;
+$spacer: 1.5rem;
+
+$navbar-light-brand-color: beige;
+$navbar-light-color: beige;
+
+$navbar-light-brand-hover-color: white;
+$navbar-light-hover-color: white;
+
 body {
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
         line-height: 1.5;
@@ -12,8 +23,8 @@ body {
       }
       
       .hero {
-        background-color: #efefef;
         padding: 0 25% 0 25%;
+        background-color: #efefef;
       }
       
       .carousel-white-text-black-shadow {
@@ -21,13 +32,8 @@ body {
         text-shadow: 1px 1px 3px black;
       }
       
-      .navbar-green {
-        background-color: #228B22;
-        color: #efefef;
-}
-                     
+                    
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "variables.scss"
-
+@import "../node_modules/bootstrap/scss/variables";
 
       

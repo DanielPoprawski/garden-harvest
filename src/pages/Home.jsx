@@ -1,11 +1,12 @@
 import Carousel from "react-bootstrap/Carousel";
 import Header from "./components/Header";
+import Button from "react-bootstrap/Button";
 
 function Home() {
         return (
                 <>
                         <Header />
-                        <div className="hero" style={{ backgroundColor: "#909090" }}>
+                        <div className="hero" style={{ backgroundColor: "var(--primary)" }}>
                                 <Carousel variant="white-text-black-shadow">
                                         <Carousel.Item>
                                                 <img src="src\assets\StockImage1.jpeg" width="100%" height="auto" />
