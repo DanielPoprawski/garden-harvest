@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 function Home() {
         return (
                 <>
-                        <Header />
                         <div className="hero" style={{ backgroundColor: "var(--primary)" }}>
                                 <Carousel variant="white-text-black-shadow">
                                         <Carousel.Item>
