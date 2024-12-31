@@ -36,7 +36,7 @@ function Home() {
                                         </Carousel.Item>
                                 </Carousel>
                         </div>
-                        <div className="hero">
+                        <div className="hero tall-padding">
                                 <br />
                                 <br />
                                 <br />
