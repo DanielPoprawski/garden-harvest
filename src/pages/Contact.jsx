@@ -36,43 +36,43 @@ export default function Contact() {
         }
 
         return (
-                <div className="hero tall-padding">
-                        <br />
-                        <br />
-                        <h1> Contact us today:</h1>
-                        <br />
-                        <h4 style={{ lineHeight: "2" }}>
-                                <table>
-                                        <tbody>
-                                                <tr>
-                                                        <td>
-                                                                <img src={Location} width={"24px"} />
-                                                        </td>
-                                                        <td>3825 W 11th Ave, Ste 1, Eugene, OR 97402</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>
-                                                                <img src={Mail2} width={"24px"} />
-                                                        </td>
-                                                        <td> egandhcenter@gmail.com </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>
-                                                                <img src={Phone} width={"24px"} />
-                                                        </td>
-                                                        <td>(541) 653 - 8459</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>
-                                                                <img src={Clock} width={"24px"} />
-                                                        </td>
-                                                        <td>
-                                                                <Schedule />
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                </table>
-                        </h4>
+                <div className="hero">
+                        <div className="jar">
+                                <h1> Contact us today:</h1>
+                                <br />
+                                <h4 style={{ lineHeight: "2" }}>
+                                        <table>
+                                                <tbody>
+                                                        <tr>
+                                                                <td>
+                                                                        <img src={Location} width={"24px"} />
+                                                                </td>
+                                                                <td>3825 W 11th Ave, Ste 1, Eugene, OR 97402</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>
+                                                                        <img src={Mail2} width={"24px"} />
+                                                                </td>
+                                                                <td> egandhcenter@gmail.com </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>
+                                                                        <img src={Phone} width={"24px"} />
+                                                                </td>
+                                                                <td>(541) 653 - 8459</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td>
+                                                                        <img src={Clock} width={"24px"} />
+                                                                </td>
+                                                                <td>
+                                                                        <Schedule />
+                                                                </td>
+                                                        </tr>
+                                                </tbody>
+                                        </table>
+                                </h4>
+                        </div>
                 </div>
         );
 }

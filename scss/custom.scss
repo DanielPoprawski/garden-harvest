@@ -1,4 +1,4 @@
-$primary: green;
+$primary: #006032;
 $bg: #efefef;
 $spacer: 1.5rem;
 
@@ -22,13 +22,19 @@ body {
       }
       
       .hero {
-        padding: 0rem 25% 0 25%;
-        background-color: #efefef;
+        padding: 4rem 10% 4rem 10%;
+        justify-content: center;
+        min-height: 100vh;
       }
 
-      .tall-padding {
-        padding: 2rem 25% 4rem 25%;
+      .gallery .card{
+        margin: 1rem;
       }
+
+      .jar {
+        margin: 0 auto;
+      }
+
       
       .carousel-white-text-black-shadow {
         color: white;
@@ -53,6 +59,13 @@ body {
         background-color: #545454;
         color: white;
       }
+
+      .carousel img {
+        width: 100%;
+        height: auto;
+      }
+
+
       
                     
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
