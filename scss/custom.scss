@@ -1,6 +1,7 @@
 $primary: #006032;
 $bg: #efefef;
 $spacer: 1.5rem;
+$body-bg: #dcdcdc;
 
 $navbar-light-brand-color: beige;
 $navbar-light-color: beige;
@@ -11,20 +12,21 @@ $navbar-light-hover-color: white;
 body {
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
         line-height: 1.5;
-        font-weight: 400;
         color-scheme: light dark;
         color: rgba(31, 31, 31, 0.87);
-        background-color: #efefef;
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+
       
       .hero {
-        padding: 4rem 10% 4rem 10%;
+        padding: 4rem;
         justify-content: center;
         min-height: 100vh;
+        margin: 0 10% 0 10%;
+        background-color: white;
       }
 
       .gallery .card{
@@ -60,10 +62,20 @@ body {
         color: white;
       }
 
-      .carousel img {
-        width: 100%;
-        height: auto;
+      .carousel {
+        max-width: min-content;
+        max-height: 43vh;
       }
+
+      .carousel-inner, .carousel-item, .carousel img {
+        max-height: inherit;
+      }
+
+      .carousel img {
+        max-height: inherit;
+        border-radius: 5px;
+      }
+
 
 
       
