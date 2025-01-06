@@ -3,12 +3,17 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavItem } from "react-bootstrap";
 import { Link } from "react-router";
+import Logo from "../../assets/logo.svg";
 
 export default function Header() {
         return (
                 <Navbar expand="xxl" bg="primary">
                         <Container>
-                                <Navbar.Brand href="#home">Eugene Garden & Harvest Center</Navbar.Brand>
+                                <Navbar.Brand>
+                                        <Link className="nav-link" to="/">
+                                                <img src={Logo} className="svg-style" />
+                                        </Link>
+                                </Navbar.Brand>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
                                         <Nav className="me-auto">
