@@ -29,18 +29,23 @@ body {
         background-color: white;
       }
 
-      .gallery .card{
-        margin: 1rem;
-      }
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+        width: min-content;
+        margin: 0 auto;
+        }
+
+        .card-deck {
+                grid-template-columns: auto auto auto auto;
+                gap: 3rem;
+                margin: 2rem auto;
+        }
 
       .jar {
         margin: 0 auto;
-      }
-
-      
-      .carousel-white-text-black-shadow {
-        color: white;
-        text-shadow: 1px 1px 3px black;
       }
 
       table {
@@ -66,6 +71,8 @@ body {
       .carousel {
         max-width: min-content;
         max-height: 43vh;
+        box-shadow: 0px 8px 15px #555555;
+        border-radius: 10px;
       }
 
       .carousel-inner, .carousel-item, .carousel img {
@@ -74,12 +81,8 @@ body {
 
       .carousel img {
         max-height: inherit;
-        border-radius: 5px;
+        border-radius: 10px;
       }
-
-
-
-      
                     
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap/scss/variables";
