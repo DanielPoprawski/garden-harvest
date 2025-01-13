@@ -1,9 +1,7 @@
-import Clock from "../assets/Clock.svg";
-import Location from "../assets/Location.svg";
-import Location2 from "../assets/Location-alt.svg";
-import Mail from "../assets/mail.svg";
-import Mail2 from "../assets/mail-alt.svg";
-import Phone from "../assets/phone.svg";
+import Clock from "/src/assets/clock.svg";
+import Location from "/src/assets/Location.svg";
+import Mail2 from "/src/assets/mail-alt.svg";
+import Phone from "/src/assets/phone.svg";
 import { useState } from "react";
 
 export default function Contact() {

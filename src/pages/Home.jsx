@@ -1,11 +1,11 @@
 import Carousel from "react-bootstrap/Carousel";
-import CommunityIcon from "../../src/assets/community.svg";
-import EducationIcon from "../../src/assets/education.svg";
-import EquipmentIcon from "../../src/assets/equipment.svg";
-import ExpertIcon from "../../src/assets/expert.svg";
-import HydroponicsIcon from "../../src/assets/hydroponics.svg";
-import PlantIcon from "../../src/assets/plants.svg";
-import SustainabilityIcon from "../../src/assets/sustainability.svg";
+import CommunityIcon from "/src/assets/community.svg";
+import EducationIcon from "/src/assets/education.svg";
+import EquipmentIcon from "/src/assets/equipment.svg";
+import ExpertIcon from "/src/assets/expert.svg";
+import HydroponicsIcon from "/src/assets/hydroponics.svg";
+import PlantIcon from "/src/assets/plants.svg";
+import SustainabilityIcon from "/src/assets/sustainability.svg";
 import Card from "./components/Card";
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
                                                 journey. We offer a wide selection of:
                                                 <br />
                                                 <br />
-                                                <div className="gallery">
+                                                <div className="grid gallery" style={{ width: "min-content" }}>
                                                         <Card
                                                                 icon={<img src={PlantIcon} />}
                                                                 text={"High-quality plants"}
@@ -57,7 +57,7 @@ function Home() {
                                 <h3>
                                         <b>We are committed to...</b>
                                 </h3>
-                                <div className="gallery card-deck">
+                                <div className="grid gallery card-deck">
                                         <Card icon={<img src={SustainabilityIcon} />} text={"Sustainability"} />
                                         <Card icon={<img src={CommunityIcon} />} text={"Community"} />
                                         <Card icon={<img src={EducationIcon} />} text={"Education"} />
