@@ -1,5 +1,8 @@
 import Card from "react-bootstrap/Card";
 
+// TODO: Map over every image in the gallery to create a card for each image
+// TODO: Add real images ( get them from Reed)
+
 export default function Gallery() {
         return (
                 <div className="hero grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
