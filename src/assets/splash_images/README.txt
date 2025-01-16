@@ -1,0 +1,2 @@
+Place all images in this folder as either .webp (preferable format), .jpeg, .jpg, or .png. No other formats will work.
+Resize all images to be 1067x600 for best support. If you manage to make any other size work, Great! If they aren't working then try resizing them

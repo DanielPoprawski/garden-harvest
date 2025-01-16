@@ -1,59 +1,27 @@
 import Card from "react-bootstrap/Card";
+import React, { useState, useEffect } from "react";
+import descriptionsData from "../assets/gallery_images/descriptions.json";
 
-// TODO: Map over every image in the gallery to create a card for each image
-// TODO: Add real images ( get them from Reed)
-
+const images = Object.values(import.meta.glob("../assets/gallery_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
+        (module) => module.default
+);
 export default function Gallery() {
+        const [descriptions, setDescriptions] = useState(["Description 1", "Description 2", "Description 3"]);
+        const noDescription = <i>No description</i>;
+
+        useEffect(() => {
+                setDescriptions(descriptionsData);
+        }, []);
         return (
                 <div className="hero grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage1.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage2.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage3.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage3.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage3.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage3.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage3.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
-                        <Card>
-                                <Card.Img src="src\assets\StockImage3.webp" />
-                                <Card.Body>
-                                        <Card.Text> Test </Card.Text>
-                                </Card.Body>
-                        </Card>
+                        {images.map((image, index) => (
+                                <Card key={index}>
+                                        <Card.Img src={image} />
+                                        <Card.Body>
+                                                <Card.Text>{descriptions[index] || noDescription}</Card.Text>
+                                        </Card.Body>
+                                </Card>
+                        ))}
                 </div>
         );
 }

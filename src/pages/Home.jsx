@@ -8,6 +8,10 @@ import PlantIcon from "/src/assets/plants.svg";
 import SustainabilityIcon from "/src/assets/sustainability.svg";
 import Card from "./components/Card";
 
+const images = Object.values(import.meta.glob("../assets/splash_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
+        (m) => m.default
+);
+
 function Home() {
         return (
                 <div className="hero">
@@ -41,15 +45,11 @@ function Home() {
                                         </h5>
                                 </div>
                                 <Carousel fade variant="white-text-black-shadow">
-                                        <Carousel.Item>
-                                                <img src="src\assets\StockImage1.webp" />
-                                        </Carousel.Item>
-                                        <Carousel.Item>
-                                                <img src="src\assets\StockImage2.webp" />
-                                        </Carousel.Item>
-                                        <Carousel.Item>
-                                                <img src="src\assets\StockImage3.webp" />
-                                        </Carousel.Item>
+                                        {images.map((image, index) => (
+                                                <Carousel.Item key={index}>
+                                                        <img src={image} />
+                                                </Carousel.Item>
+                                        ))}
                                 </Carousel>
                         </div>
                         <br />
