@@ -1,4 +1,3 @@
-import Carousel from "react-bootstrap/Carousel";
 import CommunityIcon from "/src/assets/community.svg";
 import EducationIcon from "/src/assets/education.svg";
 import EquipmentIcon from "/src/assets/equipment.svg";
@@ -7,6 +6,7 @@ import HydroponicsIcon from "/src/assets/hydroponics.svg";
 import PlantIcon from "/src/assets/plants.svg";
 import SustainabilityIcon from "/src/assets/sustainability.svg";
 import Card from "./components/Card";
+import Carousel from "./components/Carousel";
 
 const images = Object.values(import.meta.glob("../assets/splash_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
       (m) => m.default
@@ -14,20 +14,15 @@ const images = Object.values(import.meta.glob("../assets/splash_images/*.{webp,j
 
 function Home() {
       return (
-            <div className="hero">
-                  <div style={{ display: "flex", flexWrap: "none" }}>
-                        <div style={{ paddingRight: "3rem" }}>
-                              <h1>
-                                    <b>Eugene Garden & Harvest Center</b>
-                              </h1>
-                              <br />
+            <div className="min-h-screen bg-white p-8 flex flex-col">
+                  <div className="flex justify-between flex-nowrap">
+                        <div className="p-12">
+                              <h1 className="font-bold text-5xl">Eugene Garden & Harvest Center</h1>
                               <h5>
                                     Thank you for choosing Eugene Garden & Harvest! Whether you're a seasoned gardener
                                     or just starting out, we're here to support your journey. We offer a wide selection
                                     of:
-                                    <br />
-                                    <br />
-                                    <div className="grid gallery" style={{ width: "min-content" }}>
+                                    <div className="grid grid-cols-2 gap-x-52 gap-y-2 w-min mx-auto justify-items-center">
                                           <Card icon={<img src={PlantIcon} />} text={"High-quality plants"} />
                                           <Card icon={<img src={EquipmentIcon} />} text={"Gardening supplies"} />
                                           <Card icon={<img src={HydroponicsIcon} />} text={"Hydroponics "} />
@@ -35,25 +30,17 @@ function Home() {
                                     </div>
                               </h5>
                         </div>
-                        <Carousel fade variant="white-text-black-shadow">
-                              {images.map((image, index) => (
-                                    <Carousel.Item key={index}>
-                                          <img src={image} />
-                                    </Carousel.Item>
-                              ))}
-                        </Carousel>
+                        <Carousel images={images} />
                   </div>
-                  <br />
-                  <div style={{ margin: "0 auto", alignContent: "center", textAlign: "center" }}>
-                        <h3>
-                              <b>We are committed to...</b>
-                        </h3>
-                        <div className="grid gallery card-deck">
+
+                  <div className="mx-auto text-center">
+                        <h3 className="font-bold">We are committed to...</h3>
+                        <div className="grid grid-cols-4 gap-52 mx-auto my-8 w-min">
                               <Card icon={<img src={SustainabilityIcon} />} text={"Sustainability"} />
                               <Card icon={<img src={CommunityIcon} />} text={"Community"} />
                               <Card icon={<img src={EducationIcon} />} text={"Education"} />
                         </div>
-                        <h3> Visit our store today! </h3>
+                        <h3>Visit our store today!</h3>
                   </div>
             </div>
       );
