@@ -1,4 +1,3 @@
-import Card from "react-bootstrap/Card";
 import React, { useState, useEffect } from "react";
 import descriptionsData from "../assets/gallery_images/descriptions.json";
 

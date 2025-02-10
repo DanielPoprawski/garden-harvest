@@ -6,31 +6,77 @@ import HydroponicsIcon from "/src/assets/hydroponics.svg";
 import PlantIcon from "/src/assets/plants.svg";
 import SustainabilityIcon from "/src/assets/sustainability.svg";
 import Card from "./components/Card";
-import Carousel from "./components/Carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
+// const swiper = new Swiper(".swiper", {
+//       direction: "vertical",
+//       loop: true,
+
+//       pagination: {
+//             el: ".swiper-pagination",
+//       },
+
+//       navigation: {
+//             nextEl: ".swiper-button-next",
+//             prevEl: ".swiper-button-prev",
+//       },
+
+//       scrollbar: {
+//             el: ".swiper-scrollbar",
+//       },
+// });
 const images = Object.values(import.meta.glob("../assets/splash_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
       (m) => m.default
 );
 
 function Home() {
       return (
-            <div className="min-h-screen bg-white p-8 flex flex-col">
+            <div className="min-h-screen bg-white p-8 flex flex-col m-auto">
                   <div className="flex justify-between flex-nowrap">
                         <div className="p-12">
                               <h1 className="font-bold text-5xl">Eugene Garden & Harvest Center</h1>
-                              <h5>
+                              <h5 className="py-5 text-lg">
                                     Thank you for choosing Eugene Garden & Harvest! Whether you're a seasoned gardener
                                     or just starting out, we're here to support your journey. We offer a wide selection
                                     of:
-                                    <div className="grid grid-cols-2 gap-x-52 gap-y-2 w-min mx-auto justify-items-center">
-                                          <Card icon={<img src={PlantIcon} />} text={"High-quality plants"} />
-                                          <Card icon={<img src={EquipmentIcon} />} text={"Gardening supplies"} />
-                                          <Card icon={<img src={HydroponicsIcon} />} text={"Hydroponics "} />
-                                          <Card icon={<img src={ExpertIcon} />} text={"Expert advice"} />
-                                    </div>
                               </h5>
+                              <div className="grid grid-cols-2 gap-x-52 gap-y-2 w-min mx-auto justify-items-center">
+                                    <Card icon={<img src={PlantIcon} />} text={"High-quality plants"} />
+                                    <Card icon={<img src={EquipmentIcon} />} text={"Gardening supplies"} />
+                                    <Card icon={<img src={HydroponicsIcon} />} text={"Hydroponics "} />
+                                    <Card icon={<img src={ExpertIcon} />} text={"Expert advice"} />
+                              </div>
                         </div>
-                        <Carousel images={images} />
+                        <Swiper
+                              spaceBetween={50}
+                              slidesPerView={1}
+                              onSlideChange={() => console.log("slide change")}
+                              onSwiper={(swiper) => console.log(swiper)}
+                              className="shadow-lg rounded-lg"
+                        >
+                              {images.map((image, index) => {
+                                    return (
+                                          <SwiperSlide key={index}>
+                                                <img src={image} />
+                                          </SwiperSlide>
+                                    );
+                              })}
+                        </Swiper>
+                        {/* <Carousel>
+                              {images.map((image, index) => {
+                                    return (
+                                          <Carousel.Item>
+                                                <img src={image} />
+                                                <Carousel.Caption>
+                                                      <h3>Label</h3>
+                                                      <p>Description</p>
+                                                </Carousel.Caption>
+                                          </Carousel.Item>
+                                    );
+                              })}
+                        </Carousel> */}
+                        {/* <Carousel /> */}
                   </div>
 
                   <div className="mx-auto text-center">
