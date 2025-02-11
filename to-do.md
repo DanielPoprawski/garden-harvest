@@ -3,6 +3,7 @@
 ### Meta Information
 
 - Add web meta keywords
+- Add cookies disclosure
 
 ### Layout Fixes
 
@@ -13,3 +14,9 @@
 - Update carousel images
 - Realign front page icons
 - Add descriptive text with potential link to new About Us page
+- Add Google Reviews
+- Add a call to action on the page
+
+### Contact page
+
+- Add Google maps image
