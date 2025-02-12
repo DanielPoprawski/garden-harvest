@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import descriptions from "../assets/gallery_images/descriptions.json";
-
-const images = Object.values(import.meta.glob("../assets/gallery_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
+import React, { useState } from "react";
+import descriptions from "/public/gallery_images/descriptions.json";
+import CookieConsent from "./components/CookieConsent";
+const images = Object.values(import.meta.glob("/public/gallery_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
       (module) => module.default
 );
 
 export default function Gallery() {
       return (
             <div className="flex-col columns-2 p-10 mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 2xl:mx-72 min-h-screen">
+                  <CookieConsent />
                   {images.map((image, index) => (
                         <div
                               key={index}

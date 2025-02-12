@@ -1,12 +1,17 @@
+import CookieConsent from "./components/CookieConsent";
 import Clock from "/src/assets/clock.svg";
 import Location from "/src/assets/Location.svg";
 import Mail2 from "/src/assets/mail-alt.svg";
 import Phone from "/src/assets/phone.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Contact() {
       let date = new Date();
       let [today, setToday] = useState(date.getDay());
+
+      useEffect(() => {
+            window.scrollTo(0, 0);
+      }, []);
 
       function Schedule() {
             const schedule = new Map([
@@ -26,6 +31,7 @@ export default function Contact() {
                                     className={`flex justify-between gap-10 ${
                                           index === today ? "font-semibold" : "font-normal"
                                     }`}
+                                    key={index}
                               >
                                     <div>{day}</div>
                                     <div>{schedule.get(day)}</div>
@@ -36,6 +42,7 @@ export default function Contact() {
       }
       return (
             <div className="min-h-screen my-[5%] mx-[10%] flex justify-around">
+                  <CookieConsent />
                   <div className="max-w-6xl p-5 rounded-lg">
                         <h1 className="text-7xl font-bold mb-10">Contact us today</h1>
                         <div className="text-3xl flex-col divide-y divide-gray-300">

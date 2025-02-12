@@ -1,11 +1,10 @@
-import CommunityIcon from "/src/assets/community.svg";
-import EducationIcon from "/src/assets/education.svg";
 import EquipmentIcon from "/src/assets/equipment.svg";
 import ExpertIcon from "/src/assets/expert.svg";
 import HydroponicsIcon from "/src/assets/hydroponics.svg";
 import PlantIcon from "/src/assets/plants.svg";
-import SustainabilityIcon from "/src/assets/sustainability.svg";
+import { Link } from "react-router";
 import Card from "./components/Card";
+import CookieConsent from "./components/CookieConsent";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
@@ -13,14 +12,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-const images = Object.values(import.meta.glob("../assets/splash_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
+const images = Object.values(import.meta.glob("/public/splash_images/*.{webp,jpg,jpeg,png}", { eager: true })).map(
       (m) => m.default
 );
 
 function Home() {
       return (
             <div className="">
-                  <div className="min-h-screen mt-24 p-8 flex flex-col m-auto ">
+                  <CookieConsent />
+                  <div className="min-h-[90vh] mt-12 flex flex-col m-auto ">
                         <div className="flex justify-between flex-nowrap mx-20">
                               <div className="px-8">
                                     <h1 className="font-extrabold text-7xl">Eugene Garden & Harvest Center</h1>
@@ -40,8 +40,10 @@ function Home() {
                                     pagination={true}
                                     navigation={true}
                                     modules={[Pagination, Navigation]}
-                                    autoplay={true}
+                                    autoplay={{ delay: "1000" }}
+                                    speed={500}
                                     slidesPerView={1}
+                                    grabCursor={true}
                                     className="overflow-visible max-w-5xl bg-gray-300 rounded-lg max-h-[650px]"
                               >
                                     {images.map((image, index) => {
@@ -59,51 +61,44 @@ function Home() {
                                     })}
                               </Swiper>
                         </div>
-                        {/* <div className="mx-auto text-center py-10">
-                              <h3 className="font-bold text-xl">We are committed to...</h3>
-                              <div className="grid grid-cols-4 gap-52 mx-auto my-8 w-min">
-                                    <Card icon={<img src={SustainabilityIcon} />} text={"Sustainability"} />
-                                    <Card icon={<img src={CommunityIcon} />} text={"Community"} />
-                                    <Card icon={<img src={EducationIcon} />} text={"Education"} />
-                              </div>
-                              <h3>Visit our store today!</h3>
-                        </div> */}
-                        <div>
-                              <button
-                                    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-                                    className="mx-auto mt-32 w-32 h-32 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition-colors"
-                                    aria-label="Scroll down"
+                        <button
+                              onClick={() => window.scrollTo({ top: 900, behavior: "smooth" })}
+                              className="mx-auto my-auto w-24 h-24 rounded-full bg-green-800 flex items-center justify-center hover:bg-green-700 transition-colors"
+                        >
+                              <svg
+                                    className="w-16 h-16 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
                               >
-                                    <svg
-                                          className="w-16 h-16 text-white"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          viewBox="0 0 24 24"
-                                    >
-                                          <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M19 9l-7 7-7-7"
-                                          />
-                                    </svg>
-                              </button>
-                        </div>
+                                    <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth={2}
+                                          d="M19 9l-7 7-7-7"
+                                    />
+                              </svg>
+                        </button>
                   </div>
                   <div className="min-h-screen bg-lime-50 p-8 flex flex-col m-auto">
-                        <div className="max-w-4xl mx-auto text-center">
+                        <div className="max-w-7xl mx-auto text-center">
                               <h2 className="text-4xl font-bold mb-8">What Our Customers Say</h2>
-                              <div className="grid grid-cols-3 gap-8 mb-16">
+                              <div className="grid grid-cols-3 gap-8 mb-8">
                                     <div className="bg-white p-6 rounded-lg shadow">
                                           <div className="flex items-center mb-4">
                                                 <div className="text-yellow-400">★★★★★</div>
                                                 <span className="ml-2 text-gray-600">5.0</span>
                                           </div>
                                           <p className="text-gray-700 mb-4">
-                                                "Amazing selection of plants and very knowledgeable staff. They helped
-                                                me start my first garden!"
+                                                "Brandon is amazing. I was having issues with my timer, and not only did
+                                                he patiently program it and explain how to program it TWICE, he even
+                                                offered to swap it out for a new one just in case the one I had was
+                                                defective (although I'm pretty sure it wasn't) and made sure it was all
+                                                set up before I left. "Customer service" doesn't really cover it as much
+                                                as just a good neighbor who you can count on for favors. They definitely
+                                                have my permanent loyalty"
                                           </p>
-                                          <p className="font-semibold">- Sarah M.</p>
+                                          <p className="font-semibold">- Anastasia C.</p>
                                     </div>
                                     <div className="bg-white p-6 rounded-lg shadow">
                                           <div className="flex items-center mb-4">
@@ -111,9 +106,19 @@ function Home() {
                                                 <span className="ml-2 text-gray-600">5.0</span>
                                           </div>
                                           <p className="text-gray-700 mb-4">
-                                                "Best garden center in Eugene! Their hydroponics section is impressive."
+                                                "Since moving here to Eugene, this has to be the best hydroponic/grow
+                                                shop I've been to by far. Chase (shorter younger dude,) is a badass at
+                                                his job and has been exceptionally knowledgeable with all that I've
+                                                needed. Their customer service is insanely good, considering also they
+                                                actually try to save you money instead of upselling you products you
+                                                don't even need. Can't say enough good things about this store. These
+                                                are just two of the products that I frequently purchase. This soil has
+                                                to be some of the best soil that I have ever used. Light and fluffy and
+                                                has a good mix of amendments. Thank you guys for all you do. I will
+                                                continue to use this store exclusively unless you just don't have
+                                                something that I need. Which has yet to happen. Thanks again, Growmies!"
                                           </p>
-                                          <p className="font-semibold">- Mike R.</p>
+                                          <p className="font-semibold">- Auniversalmind.</p>
                                     </div>
                                     <div className="bg-white p-6 rounded-lg shadow">
                                           <div className="flex items-center mb-4">
@@ -121,10 +126,13 @@ function Home() {
                                                 <span className="ml-2 text-gray-600">5.0</span>
                                           </div>
                                           <p className="text-gray-700 mb-4">
-                                                "The workshops they offer are fantastic. I've learned so much about
-                                                sustainable gardening!"
+                                                "I stopped by their store today mainly to get an idea of prices for a
+                                                HPS lighting system. Even though I wasn't ready to buy right now the gal
+                                                behind the counter was VERY helpful, very knowledgeable and very polite.
+                                                She even put up with my rambling. ;) When I do get around to upgrading
+                                                my system I know where I'll be going. Thanks!"
                                           </p>
-                                          <p className="font-semibold">- Lisa K.</p>
+                                          <p className="font-semibold">- Robert D.</p>
                                     </div>
                               </div>
                               <div className="bg-green-800 text-white py-12 px-8 rounded-lg">
@@ -132,9 +140,14 @@ function Home() {
                                     <p className="mb-6">
                                           Visit us today and let our experts help you bring your garden dreams to life!
                                     </p>
-                                    <button className="bg-white text-green-800 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors">
-                                          Contact Us now
-                                    </button>
+                                    <Link to="/contact">
+                                          <button
+                                                onClick={() => console.log("Button clicked")}
+                                                className="bg-white text-green-800 px-8 py-3 rounded-full font-bold cursor-pointer hover:bg-green-50 transition-colors"
+                                          >
+                                                Contact Us Now!
+                                          </button>
+                                    </Link>
                               </div>
                         </div>
                   </div>

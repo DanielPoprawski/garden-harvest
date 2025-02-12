@@ -1,9 +1,15 @@
 ## Web Content Updates
 
+- Lazy load / Async front page images
+- Loading icon for gallery
+- Lazy load / Do not laod other pages
+-
+
 ### Meta Information
 
-- Add cookies disclosure
+- Add cookies disclosure (No cookies as of right now)
 - Add website version to footer
+- Add drag & drop function for server
 
 ### Layout Fixes
 
